@@ -21,6 +21,7 @@ RUN git clone --recursive https://github.com/pfalcon/esp-open-sdk.git
 
 WORKDIR /workdir/esp-open-sdk
 
-RUN make STANDALONE=y
+RUN make STANDALONE=y && \
+    rm -rf /workdir/esp-open-sdk/crosstool-NG/.build
 
 RUN export PATH=$PATH:/workdir/esp-open-sdk/xtensa-lx106-elf/bin
