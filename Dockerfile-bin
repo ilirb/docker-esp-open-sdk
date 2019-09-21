@@ -23,4 +23,8 @@ WORKDIR /workdir/esp-open-sdk
 
 RUN make STANDALONE=y
 
-RUN export PATH=$PATH:/workdir/esp-open-sdk/xtensa-lx106-elf/bin
+FROM ubuntu
+
+COPY --from=esp /workdir/esp-open-sdk/xtensa-lx106-elf/bin/ /esp-open-sdk
+
+RUN export PATH=$PATH:/esp-open-sdk
