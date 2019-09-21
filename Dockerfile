@@ -21,6 +21,6 @@ RUN git clone --recursive https://github.com/pfalcon/esp-open-sdk.git
 
 WORKDIR /workdir/esp-open-sdk
 
-RUN make -s STANDALONE=y 
+RUN make STANDALONE=y
 
 RUN export PATH=$PATH:/workdir/esp-open-sdk/xtensa-lx106-elf/bin
